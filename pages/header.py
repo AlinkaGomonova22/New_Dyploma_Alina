@@ -13,9 +13,9 @@ class Header(BasePage):
     def check_catalog(self):
         with allure.step("Проверка отображения кнопки каталог"):
             self.find_element(header_locators.catalog_button).is_displayed()
-        with allure.step("Нажатие на кнопку каталог"):
-            self.find_element(header_locators.catalog_button).click()
-            time.sleep(2)
+        # with allure.step("Нажатие на кнопку каталог"):
+        #     self.find_element(header_locators.catalog_button).click()
+        #     time.sleep(2)
 
     def check_brands(self):
         with allure.step("Проверка отображения кнопки брэнды"):

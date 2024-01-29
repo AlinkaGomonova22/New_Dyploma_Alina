@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-search_field = (By.XPATH, '//div[@class="search-control search-field"]')
+search_field = (By.XPATH, '//textarea[@id="search_multiline"')
 
 kiki_result = (By.XPATH, '//div[@class="x5Abc"]')
 

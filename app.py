@@ -43,7 +43,7 @@ def run_api():
 
 
 @app.route("/run-ui")
-def run():
+def run_ui():
     """ Эта функция запуская и отвечает за тесты страницы /example. """
 
     cmd = ["./New_Dyploma_Alina/script/ui.sh"]

@@ -2,7 +2,6 @@ import time
 
 import allure
 
-
 from pages.base_page import BasePage
 from pages.locators import header_locators, search_page_locators
 
@@ -21,7 +20,10 @@ class SearchPage(BasePage):
 
     def find_product(self):
         with allure.step("Ввести в строку текст"):
-            self.find_element(search_page_locators.search_field).send_keys("kiki")
+            self.find_element(search_page_locators.search_field).click()
+            time.sleep(2)
+        with allure.step("Ввести в строку текст"):
+            self.find_element(search_page_locators.search_field).send_keys('kiki')
             time.sleep(2)
         with allure.step("проверка отображения результата"):
             self.find_element(search_page_locators.result_text).is_displayed()

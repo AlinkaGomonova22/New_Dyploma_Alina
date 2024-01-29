@@ -23,6 +23,8 @@ news_stories_content = (By.XPATH, '(//div[@class="story__content"])[7]')
 rad_stories_content = (By.XPATH, '(//div[@class="story__content"])[5]')
 close_stories_button = (By.XPATH, '//button[@class="stories-modal__control stories-modal__close"]')
 logo_button = (By.XPATH, '(//div[@class="U6bDq"])[2]')
-
+confirm_city_button = (By.XPATH,
+                       '//button[@class="button-primary modal-city-informer__btn modal-city-informer__btn_primary"]')
+accept_cookies_button = (By.XPATH, '//button[@class="cookies-notification__btn button-primary"]')
 
 
