@@ -10,7 +10,7 @@ stocks_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[3]')
 
 clients_days_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[4]')
 
-stores_bytton = (By.XPATH, '//a[@class="ogg-menu__link   "])[5]')
+stores_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[5]')
 
 gift_cards_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[6]')
 
@@ -26,6 +26,22 @@ basket_button = (By.XPATH, '//button[@class="header-tab-button header-tab-button
 
 logo_button = (By.XPATH, '//span[@class="header-tab-button header-tab-button_logo"]')
 
+liked_text = (By.XPATH, '//h1[@class="E+FsI"]')
 
+basket_text = (By.XPATH, '//span[@class="ehlvF"]')
 
+find_brand_text = (By.XPATH, '//input[@placeholder="найти бренд"]')
 
+novelty_text = (By.XPATH, '//div[@class="LCdDN"]')
+
+stocks_text = (By.XPATH, '//h1[@class="m-h2 t-h1"]')
+
+clients_days_text = (By.XPATH, '//h1[@class="m-h2 t-h1"]')
+
+stores_text = (By.XPATH, '//h1[@class="I5iUR"]')
+
+gift_card_text = (By.XPATH,'//nav[@class="A-ue7"]')
+
+sales_under_40_text = (By.XPATH, '//span[@class="jH3N7"]')
+
+close_basket_button = (By.XPATH, '//button[@class="h8lFg _4kl7v oL8O0 KNpCU ONl5c"]')

@@ -19,11 +19,11 @@ def error():
     return render_template('test_error.html')
 
 
-@app.route("/runallure")
+@app.route("/run-allure")
 def run_allure():
     """ Эта функция запуская и отвечает за генерацию отчета allure. """
 
-    cmd = ["./scriptsh/runallure.sh"]
+    cmd = ["./New_Dyploma_Alina/script/allure.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
@@ -32,7 +32,17 @@ def run_allure():
     return render_template('index.html', text=out, json=out)
 
 
-@app.route("/run")
+@app.route("/run-api")
+def run_api():
+    """Эта функция запускает и отвечает за процесс возврата результата api test"""
+
+    cmd = ["./New_Dyploma_Alina/script/api.sh"]
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    output = result.stdout.strip()
+    return output
+
+
+@app.route("/run-ui")
 def run():
     """ Эта функция запуская и отвечает за тесты страницы /example. """
 

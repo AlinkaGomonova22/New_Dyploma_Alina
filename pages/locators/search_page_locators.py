@@ -17,3 +17,7 @@ ad_in_liked_button = (By.XPATH, '(//button[@class="h8lFg _4kl7v oL8O0 larUe"])[1
 ad_in_basket_circle_button = (By.XPATH, '//button[@class="h8lFg EUGE0 ixvdR G-5PD ZLmJb r38w2 _0EaND"])[1]')
 
 ad_in_basket_button = (By.XPATH, '(//button[@class="h8lFg y5MHj PNsDB _369fa TOKJx"])[1]')
+
+result_text = (By.XPATH, '//span[@class="XKqXH"]')
+
+notification = (By.XPATH, '//div[@class="ga-notifications__transition-group"]')
