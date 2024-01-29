@@ -32,14 +32,22 @@ def run_allure():
     return render_template('index.html', text=out, json=out)
 
 
-@app.route("/run-api")
-def run_api():
-    """Эта функция запускает и отвечает за процесс возврата результата api test"""
 
-    cmd = ["./New_Dyploma_Alina/script/api.sh"]
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    output = result.stdout.strip()
-    return output
+
+@app.route("/runapi")
+def run_api():
+    bash_path = "C:/Program Files/Git/bin/bash.exe"
+
+    script_path = "C:/Users/PC/PycharmProjects/New_Dyploma_Alina/script/api.sh"
+
+    cmd = [bash_path, script_path]
+    try:
+        with subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE,
+                              universal_newlines=True) as result:
+            out, err = result.communicate()
+        return render_template('index.html', text=out, error=err)
+    except Exception as e:
+        return str(e)
 
 
 @app.route("/run-ui")
