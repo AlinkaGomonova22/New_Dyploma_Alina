@@ -1,24 +1,24 @@
 from selenium.webdriver.common.by import By
 
-catalog_button = (By.XPATH, '(//a[@class="ogg-menu__link ogg-menu__link_with-categories"])[1]')
+catalog_button = (By.XPATH, '//li[@class="ogg-menu__item ogg-menu__item_parent"]')
 
-brands_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[1]')
+brands_button = (By.XPATH, '(//li[@class="ogg-menu__item ogg-menu__item_parent   "])[2]')
 
-novelty_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[2]')
+novelty_button = (By.XPATH, '(//li[@class="ogg-menu__item ogg-menu__item_parent   "])[3]')
 
-stocks_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[3]')
+stocks_button = (By.XPATH, '(//li[@class="ogg-menu__item ogg-menu__item_parent   "])[4]')
 
-clients_days_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[4]')
+clients_days_button = (By.XPATH, '(//li[@class="ogg-menu__item ogg-menu__item_parent   "])[5]')
 
-stores_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[5]')
+stores_button = (By.XPATH, '//li[@class="ogg-menu__item ogg-menu__item_parent  _mobile-excluded "]')
 
-gift_cards_button = (By.XPATH, '//a[@class="ogg-menu__link   "])[6]')
+gift_cards_button = (By.XPATH, '(//li[@class="ogg-menu__item ogg-menu__item_parent   "])[6]')
 
-sales_under_40 = (By.XPATH, '(//a[@class="ogg-menu__link ogg-menu__link_with-categories"])[2]')
+sales_under_40 = (By.XPATH, '//li[@class="ogg-menu__item ogg-menu__item_parent   _custom-color"]')
 
 search_button = (By.XPATH, '//button[@class="header-tab-button header-tab-button_search"]')
 
-liked_button = (By.XPATH, '//a[@class="header-tab-button header-tab-button_wishlist _link"]')
+liked_button = (By.XPATH, '//div[@data-role="header-tab-wishlist"]')
 
 profile_button = (By.XPATH, '//button[@class="header-tab-button header-tab-button_customer"]')
 

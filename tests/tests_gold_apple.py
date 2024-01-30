@@ -1,10 +1,10 @@
 import time
 import pytest
 import allure
-from pages.base_page import BasePage
 from pages.home_page import HomePage
 from pages.header import Header
 from pages.search_page import SearchPage
+
 
 @pytest.mark.presentation
 @pytest.mark.non_multiple_CPUs_run
@@ -13,7 +13,6 @@ from pages.search_page import SearchPage
 def test_stories(driver):
     home_page = HomePage(driver)
     home_page.open()
-    home_page.accept_cookies()
     home_page.check_stories_visible()
     home_page.click_stories()
     time.sleep(3)
@@ -30,13 +29,11 @@ def test_header_buttons(driver):
     # header.check_catalog()
     header.check_brands()
     # header.check_novelties()
-    # header.check_stocks()
-    # header.check_clients_days()
+    header.check_stocks()
+    header.check_clients_days()
     # header.check_stores()
     # header.check_gift_cards()
-    # header.check_sales()
-    # header.check_liked()
-    # header.check_basket()
+    header.check_sales()
     time.sleep(3)
 
 
@@ -52,4 +49,5 @@ def test_search_page(driver):
     search.find_product()
     search.check_filters()
     search.add_in_liked()
+    search.check_goods()
     time.sleep(3)

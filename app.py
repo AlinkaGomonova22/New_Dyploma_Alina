@@ -16,22 +16,20 @@ def welcome():
 @app.route("/error")
 def error():
     """Эта функция запуская и отвечает за процесс возврата результата test_error.html."""
-    return render_template('test_error.html')
+    return render_template('index.html')
 
 
-@app.route("/run-allure")
+@app.route("/runallure")
 def run_allure():
     """ Эта функция запуская и отвечает за генерацию отчета allure. """
 
-    cmd = ["./New_Dyploma_Alina/script/allure.sh"]
+    cmd = ["./New_Dyplom_Alina/script/allure.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
                           universal_newlines=True) as result:
         out = result.communicate()
     return render_template('index.html', text=out, json=out)
-
-
 
 
 @app.route("/runapi")
@@ -41,16 +39,17 @@ def run_api():
     script_path = "C:/Users/PC/PycharmProjects/New_Dyploma_Alina/script/api.sh"
 
     cmd = [bash_path, script_path]
-    try:
-        with subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE,
-                              universal_newlines=True) as result:
-            out, err = result.communicate()
-        return render_template('index.html', text=out, error=err)
-    except Exception as e:
-        return str(e)
+
+    with subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            stdin=subprocess.PIPE,
+                            universal_newlines=True) as result:
+        out, err = result.communicate()
+    return render_template('index.html', text=out, error=err)
 
 
-@app.route("/run-ui")
+
+@app.route("/runui")
 def run_ui():
     """ Эта функция запуская и отвечает за тесты страницы /example. """
 

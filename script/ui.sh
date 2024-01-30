@@ -1,4 +1,4 @@
 #!/bin/bash
 pwd
 cd ../
-pytest -s -v tests/tests_gold_apple
+pytest -s -v tests/tests_gold_apple.py

@@ -13,9 +13,12 @@ class Header(BasePage):
     def check_catalog(self):
         with allure.step("Проверка отображения кнопки каталог"):
             self.find_element(header_locators.catalog_button).is_displayed()
-        # with allure.step("Нажатие на кнопку каталог"):
-        #     self.find_element(header_locators.catalog_button).click()
-        #     time.sleep(2)
+        with allure.step("Нажатие на кнопку каталог"):
+            self.find_element(header_locators.catalog_button).click()
+            time.sleep(2)
+        with allure.step("Вернуться на главную страницу"):
+            self.find_element(home_page_locators.logo_button).click()
+            time.sleep(2)
 
     def check_brands(self):
         with allure.step("Проверка отображения кнопки брэнды"):
@@ -25,6 +28,9 @@ class Header(BasePage):
             time.sleep(2)
         with allure.step("Проверка отображения текста найти брэнд"):
             self.find_element(header_locators.find_brand_text).is_displayed()
+        with allure.step("Вернуться на главную страницу"):
+            self.find_element(home_page_locators.logo_button).click()
+            time.sleep(2)
 
     def check_novelties(self):
         with allure.step("Проверка отображения кнопки новинки"):
@@ -34,6 +40,10 @@ class Header(BasePage):
             time.sleep(2)
         with allure.step("Проверка отображения текста новинки"):
             self.find_element(header_locators.novelty_text).is_displayed()
+            time.sleep(2)
+        with allure.step("Вернуться на главную страницу"):
+            self.find_element(home_page_locators.logo_button).click()
+            time.sleep(2)
 
     def check_stocks(self):
         with allure.step("Проверка отображения кнопки акции"):
@@ -43,6 +53,9 @@ class Header(BasePage):
             time.sleep(2)
         with allure.step("Проверка отображения текста акции"):
             self.find_element(header_locators.stocks_text).is_displayed()
+        with allure.step("Вернуться на главную страницу"):
+            self.find_element(home_page_locators.logo_button).click()
+            time.sleep(2)
 
     def check_clients_days(self):
         with allure.step("Проверка отображения кнопки клиентские дни"):
@@ -52,6 +65,9 @@ class Header(BasePage):
             time.sleep(2)
         with allure.step("Проверка отображения текста клиентсике дни"):
             self.find_element(header_locators.clients_days_text).is_displayed()
+        with allure.step("Вернуться на главную страницу"):
+            self.find_element(home_page_locators.logo_button).click()
+            time.sleep(2)
 
     def check_stores(self):
         with allure.step("Проверка отображения кнопки магазины"):
@@ -61,15 +77,18 @@ class Header(BasePage):
             time.sleep(2)
         with allure.step("Проверка отображения текста магазины"):
             self.find_element(header_locators.stores_text).is_displayed()
+            time.sleep(2)
+        # with allure.step("Вернуться на главную страницу"):
+        #     self.find_element(home_page_locators.logo_button).click()
+        #     time.sleep(2)
 
     def check_gift_cards(self):
         with allure.step("Проверка отображения кнопки подарочные карты"):
             self.find_element(header_locators.gift_cards_button).is_displayed()
         with allure.step("Нажатие на кнопку подарочные карты"):
             self.find_element(header_locators.gift_cards_button).click()
-            time.sleep(2)
-        with allure.step("Проверка отображения текста подарочные карты"):
             time.sleep(3)
+        with allure.step("Проверка отображения текста подарочные карты"):
             self.find_element(header_locators.gift_card_text).is_displayed()
         with allure.step("Вернуться на главную страницу"):
             self.find_element(home_page_locators.logo_button).click()
@@ -84,22 +103,3 @@ class Header(BasePage):
         with allure.step("Проверка отображения текста скидки до 40%"):
             self.find_element(header_locators.sales_under_40_text).is_displayed()
 
-    def check_liked(self):
-        with allure.step("Проверка отображения кнопки избранное"):
-            self.find_element(header_locators.liked_text).is_displayed()
-        with allure.step("Нажатие на кнопку избранное"):
-            self.find_element(header_locators.liked_text).click()
-            time.sleep(2)
-        with allure.step("Проверка отображения текста избранное"):
-            self.find_element(header_locators.liked_text).is_displayed()
-
-    def check_basket(self):
-        with allure.step("Проверка отображения кнопки корзина"):
-            self.find_element(header_locators.basket_button).is_displayed()
-        with allure.step("Нажатие на кнопку корзина"):
-            self.find_element(header_locators.basket_button).click()
-            time.sleep(5)
-        with allure.step("Проверка отображения текста корзина"):
-            self.find_element(header_locators.basket_text).is_displayed()
-        with allure.step("Закрыть корзину"):
-            self.find_element(header_locators.close_basket_button).click()

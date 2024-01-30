@@ -47,5 +47,5 @@ class HomePage(BasePage):
             self.find_element(home_page_locators.for_me_stories_content).is_displayed()
             self.find_element(home_page_locators.close_stories_button).click()
 
-    def accept_cookies(self):
-        pass
+    # def accept_cookies(self):
+    #     pass
