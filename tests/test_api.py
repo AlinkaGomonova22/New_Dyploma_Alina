@@ -1,8 +1,6 @@
 import requests
 import allure
 import pytest_check as check
-import time
-import json
 
 
 @allure.suite("Test API")
@@ -18,7 +16,6 @@ def test_api_1():
 
     url = "https://goldapple.by/front/api/user/info/full"
 
-    payload = {}
     headers = {
         'authority': 'goldapple.by',
         'accept': 'application/json, text/plain, */*',
@@ -35,11 +32,7 @@ def test_api_1():
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     }
 
-    response = requests.request("GET", url, headers=headers, data=payload)
-
-    print(response.text)
-    print(response.status_code)
-    print(response.request.method)
+    response = requests.request("GET", url, headers=headers)
 
     with allure.step('Проверка статус кода'):
         check.equal(response.status_code, 200)

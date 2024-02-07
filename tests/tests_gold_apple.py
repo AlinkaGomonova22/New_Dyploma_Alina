@@ -26,13 +26,9 @@ def test_header_buttons(driver):
     header = Header(driver)
     home_page = HomePage(driver)
     home_page.open()
-    # header.check_catalog()
     header.check_brands()
-    # header.check_novelties()
     header.check_stocks()
     header.check_clients_days()
-    # header.check_stores()
-    # header.check_gift_cards()
     header.check_sales()
     time.sleep(3)
 

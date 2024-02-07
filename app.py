@@ -1,5 +1,5 @@
 """ Импортирование библиотеки для работы с Flask и запусков субпроцессов. """
-
+import os
 import subprocess
 from flask import Flask, render_template
 
@@ -34,26 +34,22 @@ def run_allure():
 
 @app.route("/runapi")
 def run_api():
-    bash_path = "C:/Program Files/Git/bin/bash.exe"
-
-    script_path = "C:/Users/PC/PycharmProjects/New_Dyploma_Alina/script/api.sh"
-
-    cmd = [bash_path, script_path]
-
+    os.chdir('C:/Users/PC/PycharmProjects/New_Dyploma_Alinascript/script')
+    cmd = ["api.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
-                            stderr=subprocess.PIPE,
-                            stdin=subprocess.PIPE,
-                            universal_newlines=True) as result:
-        out, err = result.communicate()
-    return render_template('index.html', text=out, error=err)
-
+                          stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE,
+                          universal_newlines=True,
+                          shell=True) as result:
+        out = result.communicate()
+    return render_template('index.html', text=out, json=out)
 
 
 @app.route("/runui")
 def run_ui():
     """ Эта функция запуская и отвечает за тесты страницы /example. """
 
-    cmd = ["./New_Dyploma_Alina/script/ui.sh"]
+    cmd = ["C:/Users/PC/PycharmProjects/New_Dyploma_Alinascript/script/ui.sh"]
     with subprocess.Popen(cmd, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE,
